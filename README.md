@@ -1,2 +1,2 @@
 # Proyecto de Ingeniería
-Integrantes: David Oñate, Javier Cabanillas, Guillermo rodríguez y Rodrigo De La Blanca
+Integrantes: David Oñate, Javier Cabanillas, Guillermo Rodríguez y Rodrigo De La Blanca
