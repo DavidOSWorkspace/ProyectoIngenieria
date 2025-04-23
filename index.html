@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Alcoholímetro</title>
+</head>
+<body>
+  <div class="question">¿Desea introducir 1€ para saber su nivel de alcohol en aire?</div>
+  <div class="buttons">
+    <button onclick="aceptar()">Sí</button>
+    <button>No</button>
+  </div>
+
+  <div id="formulario">
+    <label>Nombre: <input type="text" id="nombre"></label><br><br>
+    <label>Edad: <input type="number" id="edad"></label><br><br>
+    <button onclick="enviarFormulario()">Enviar</button>
+  </div>
+
+  <div id="mensaje"></div>
+  <div id="sople"></div>
+  <div id="resultado"></div>
+  <button id="volverBtn" onclick="volverAlInicio()">Volver al inicio</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
