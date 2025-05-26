@@ -1,67 +1,149 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    padding: 50px;
-    background: linear-gradient(to right, #e0f7fa, #fff);
-    color: #333;
-  }
-  .question {
-    font-size: 26px;
-    margin-bottom: 40px;
-    font-weight: bold;
-  }
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-    max-width: 300px;
-    margin: 0 auto 40px;
-  }
-  button {
-    padding: 12px 24px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    background-color: #0288d1;
-    color: white;
-    transition: background-color 0.3s ease;
-  }
-  button:hover {
-    background-color: #0277bd;
-  }
-  #formulario, #mensaje, #sople, #resultado {
-    margin-top: 30px;
-    font-size: 20px;
-    display: none;
-  }
-  #formulario input {
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    margin: 5px;
-  }
-  #sople {
-    padding: 20px;
-    color: white;
-    font-size: 24px;
-    border-radius: 10px;
-    margin-top: 20px;
-    transition: background-color 1s ease;
-  }
-  .verde {
-    background-color: #4caf50;
-  }
-  .rojo {
-    background-color: #e53935;
-  }
-  #volverBtn {
-    display: none;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #555;
-    border-radius: 6px;
-    color: white;
-  }
-  #volverBtn:hover {
-    background-color: #333;
-  }
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #pantallaInicio {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url('jowke.jpg') no-repeat center center/cover;
+      background-size: 100% 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      cursor: pointer;
+      z-index: 10;
+    }
+    #textoClick {
+      color: white;
+      font-size: 28px;
+      margin-bottom: 200px;
+      animation: parpadeo 1.5s infinite;
+    }
+    @keyframes parpadeo {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .pantalla {
+      display: none;
+      min-height: 100vh;
+      padding: 50px 20px;
+      background: linear-gradient(to right, #e0f7fa, #fff);
+      color: #333;
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .question {
+      font-size: 26px;
+      margin-bottom: 40px;
+      font-weight: bold;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #0288d1;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0277bd;
+    }
+    input {
+      padding: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      margin-top: 5px;
+      width: 200px;
+    }
+    #formulario label {
+      display: block;
+      margin-bottom: 15px;
+    }
+    #formulario.error input {
+      border-color: red;
+    }
+    #errorEdad, #errorLogin {
+      color: red;
+      font-weight: bold;
+      display: none;
+    }
+    #pantallaProceso {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+    #sople {
+      margin-top: 20px;
+      padding: 20px;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      border-radius: 10px;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background-color 1s ease;
+      animation: parpadeoSople 1.5s infinite;
+    }
+    @keyframes parpadeoSople {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .verde { background-color: #4caf50; }
+    .rojo { background-color: #e53935; }
+    #volverBtn, #volverInicioBtn {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #555;
+      border-radius: 6px;
+      color: white;
+    }
+    #volverBtn:hover, #volverInicioBtn:hover {
+      background-color: #333;
+    }
+    #volverLoginBtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #555;
+      border-radius: 6px;
+      color: white;
+    }
+    #volverLoginBtn:hover {
+      background-color: #333;
+    }
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px 16px;
+      font-size: 16px;
+    }
+    th {
+      background-color: #0288d1;
+      color: white;
+    }
