@@ -7,22 +7,60 @@
   <title>Alcoholímetro</title>
 </head>
 <body>
-  <div class="question">¿Desea introducir 1€ para saber su nivel de alcohol en aire?</div>
-  <div class="buttons">
-    <button onclick="aceptar()">Sí</button>
-    <button>No</button>
+  <script>
+  // Asegurar que la pantalla inicial esté visible al cargar
+  window.onload = () => {
+    document.getElementById('pantallaInicio').style.display = 'flex';
+  };
+</script>
+  <div id="pantallaInicio" onclick="mostrarPantallaPrincipal()">
+    <div id="textoClick">Haga click para iniciar</div>
   </div>
 
-  <div id="formulario">
+  <div id="inicio" class="pantalla">
+    <div class="question">¿Eres Usuario o Administrador?</div>
+    <div class="buttons">
+      <button onclick="mostrarUsuario()">Usuario</button>
+      <button onclick="mostrarLogin()">Administrador</button>
+    </div>
+  </div>
+
+  <div id="usuarioSection" class="pantalla">
+    <div class="question">¿Desea introducir 1€ para saber su nivel de alcohol en aire?</div>
+    <div class="buttons">
+      <button onclick="mostrarFormulario()">Sí</button>
+      <button onclick="volverPantallaInicio()">No</button>
+    </div>
+  </div>
+
+  <div id="formulario" class="pantalla">
     <label>Nombre: <input type="text" id="nombre"></label><br><br>
-    <label>Edad: <input type="number" id="edad"></label><br><br>
+    <label>Edad: <input type="number" id="edad"></label><br>
+    <div id="errorEdad">No se permite el uso de la máquina a menores de 18 años.</div><br>
     <button onclick="enviarFormulario()">Enviar</button>
   </div>
 
-  <div id="mensaje"></div>
-  <div id="sople"></div>
-  <div id="resultado"></div>
-  <button id="volverBtn" onclick="volverAlInicio()">Volver al inicio</button>
+  <div id="pantallaProceso" class="pantalla">
+    <div id="mensaje"></div>
+    <div id="sople"></div>
+    <div id="resultado"></div>
+    <button id="volverBtn" onclick="volverPantallaInicio()">Volver al inicio</button>
+  </div>
+  <div id="login" class="pantalla">
+    <div class="question">Login Administrador</div>
+    <input type="text" id="usuario" placeholder="Usuario"><br><br>
+    <input type="password" id="contrasena" placeholder="Contraseña"><br>
+    <div id="errorLogin">Usuario o contraseña incorrectos.</div><br>
+    <button onclick="loginAdmin()">Entrar</button>
+    <br>
+    <button id="volverLoginBtn" onclick="volverPantallaInicio()">Volver al inicio</button>
+  </div>
+
+  <div id="tablaRegistros" class="pantalla">
+    <button id="volverInicioBtn" onclick="volverPantallaInicio()">Volver al inicio</button>
+  </div>
+
+
 
   <script src="script.js"></script>
 </body>
